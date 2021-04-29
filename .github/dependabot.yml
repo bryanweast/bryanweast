@@ -1,0 +1,18 @@
+version: 2
+registries:
+  git-github-com:
+    type: git
+    url: https://GitHub.com
+    username: bryanweast
+    password: "${{secrets.GIT_GITHUB_COM_PASSWORD}}"
+
+updates:
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+    timezone: America/New_York
+  open-pull-requests-limit: 10
+  registries:
+  - git-github-com
